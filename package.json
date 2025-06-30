@@ -1,0 +1,94 @@
+{
+  "name": "velqis-desktop",
+  "version": "1.0.0",
+  "description": "Velqis AI Creative Tools - Desktop Application",
+  "main": "src/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run dev:renderer\" \"wait-on http://localhost:3000 && electron .\"",
+    "dev:renderer": "react-scripts start",
+    "build": "react-scripts build",
+    "build:electron": "npm run build && electron-builder",
+    "build:win": "npm run build && electron-builder --win",
+    "build:mac": "npm run build && electron-builder --mac", 
+    "build:linux": "npm run build && electron-builder --linux",
+    "test": "react-scripts test",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "ai",
+    "desktop",
+    "video-generation",
+    "image-generation", 
+    "music-generation",
+    "velqis",
+    "creative-tools",
+    "electron"
+  ],
+  "author": "Velqis Team",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^27.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.8.0",
+    "axios": "^1.6.2",
+    "ws": "^8.14.2",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.4",
+    "framer-motion": "^10.16.5",
+    "styled-components": "^6.1.1",
+    "react-icons": "^4.12.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1",
+    "uuid": "^9.0.1",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.4",
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.velqis.desktop",
+    "productName": "Velqis AI Studio",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "src/main.js",
+      "src/preload.js",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+} 
