@@ -27,9 +27,9 @@ function showWelcome() {
   console.log(boxen(
     chalk.white('AI Creative Tools - Command Line Interface\n') +
     chalk.gray('Generate videos, images, and music with AI\n\n') +
-    chalk.cyan('🎬 Video Generation') + chalk.gray(' - Create videos from text or images\n') +
-    chalk.magenta('🎨 Image Generation') + chalk.gray(' - Generate images from descriptions\n') +
-    chalk.green('🎵 Music Generation') + chalk.gray(' - Compose music with AI'),
+    chalk.cyan('Video Generation') + chalk.gray(' - Create videos from text or images\n') +
+    chalk.magenta('Image Generation') + chalk.gray(' - Generate images from descriptions\n') +
+    chalk.green('Music Generation') + chalk.gray(' - Compose music with AI'),
     {
       padding: 1,
       margin: 1,
@@ -70,7 +70,7 @@ program
 
 program
   .command('image')
-  .description('🎨 Generate images with AI')
+  .description('Generate images with AI')
   .action(() => {
     imageCommands.showImageMenu();
   });
@@ -87,7 +87,7 @@ program
 
 program
   .command('music')
-  .description('🎵 Generate music with AI')
+  .description('Generate music with AI')
   .action(() => {
     musicCommands.showMusicMenu();
   });
@@ -117,7 +117,7 @@ program
 
 program
   .command('history')
-  .description('📜 Show generation history')
+  .description('Show generation history')
   .option('-t, --type <type>', 'Filter by type (video, image, music)')
   .option('-l, --limit <number>', 'Limit results', '10')
   .action((options) => {
@@ -126,18 +126,18 @@ program
 
 program
   .command('status')
-  .description('📊 Show API status and usage')
+  .description('Show API status and usage')
   .action(() => {
     require('../src/utils/api').showStatus();
   });
 
 program
   .command('open')
-  .description('🌐 Open Velqis web interface')
+  .description('Open Velqis web interface')
   .action(() => {
     const open = require('open');
     open('https://morphio.xyz');
-    console.log(chalk.cyan('🌐 Opening Velqis web interface...'));
+    console.log(chalk.cyan('Opening Velqis web interface...'));
   });
 
 program.on('command:*', function () {
