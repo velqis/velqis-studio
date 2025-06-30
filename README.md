@@ -204,14 +204,6 @@ The application uses Electron Builder for creating distributable packages:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support and Documentation
-
-- **Email Support**: support@velqis.ai
-- **Community Discord**: [Velqis Community](https://discord.gg/velqis)
-- **API Documentation**: [docs.velqis.ai](https://docs.velqis.ai)
-- **Issue Tracking**: [GitHub Issues](https://github.com/velqis/desktop/issues)
-- **Release Notes**: [GitHub Releases](https://github.com/velqis/desktop/releases)
-
 ## System Requirements
 
 **Minimum Requirements**
